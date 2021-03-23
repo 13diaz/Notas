@@ -1,25 +1,21 @@
-import { Component } from '@angular/core';
+import { CrudService } from '../contenido/crud.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit {
+  importantes = [];
 
-  private importantes=[
-    {
-      id:'1',
-      titulo:'Tarea Martes',
-      contenido: 'Tipos de Licencias'
-    },
-    {
-      id:'2',
-      titulo:'Tarea Jueves',
-      contenido: 'PSR12'
-    }
-  ]
+  constructor(private crudServicio: CrudService) {}
 
-  constructor() {}
+  ngOnInit() {
+    this.importantes = this.crudServicio.obtenerImportantes();
+  }
 
+  ionViewWillEnter() {
+    this.importantes = this.crudServicio.obtenerImportantes();
+  }
 }

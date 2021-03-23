@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{importante.titulo}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="eliminarNota()">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col>
+        <ion-text
+          *ngIf="importante.contenido && importante.contenido.length > 0; else sinContenido"
+        >
+          <p>{{importante.contenido}}</p>
+        </ion-text>
+        <ng-template #sinContenido>
+          <ion-text>
+            <p class="ion-text-center">No hay contenido</p>
+          </ion-text>
+        </ng-template>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
