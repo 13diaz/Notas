@@ -16,6 +16,11 @@ export class CrudService {
       titulo: 'Tarea Jueves',
       contenido: 'PSR12',
     },
+    {
+      id: '3',
+      titulo: 'Sitio Web Colores css',
+      contenido: 'Link: coolors.co',
+    },
   ];
 
   constructor() {}

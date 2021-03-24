@@ -1,5 +1,6 @@
 import { CrudService } from '../contenido/crud.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomePage implements OnInit {
   importantes = [];
 
-  constructor(private crudServicio: CrudService) {}
+  constructor(private crudServicio: CrudService, private router: Router) {}
 
   ngOnInit() {
     this.importantes = this.crudServicio.obtenerImportantes();
@@ -17,5 +18,9 @@ export class HomePage implements OnInit {
 
   ionViewWillEnter() {
     this.importantes = this.crudServicio.obtenerImportantes();
+  }
+
+  agregarNuevaNota() {
+    this.router.navigate(['../formulario'])
   }
 }

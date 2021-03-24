@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Agregar nueva tarea</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col>
+        <i-card>
+          <ion-card-title>
+            <ion-label>
+              <p>Titulo Nota:</p>
+            </ion-label>
+            <ion-input type="text" required #titulo></ion-input>
+          </ion-card-title>
+          <ion-card-content>
+            <ion-label>
+              <p>Contenido Nota:</p>
+            </ion-label>
+            <ion-input type="text" #contenido></ion-input>
+          </ion-card-content>
+          <ion-button
+            (click)="guardarNuevaNota( titulo, contenido )"
+            expand="true"
+            fill="outline"
+            shape="round"
+            class="botonAgregar"
+          >
+            Agregar
+          </ion-button>
+        </i-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

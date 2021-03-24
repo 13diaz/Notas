@@ -28,7 +28,7 @@ export class ContenidoPage implements OnInit {
 
   async eliminarNota() {
     const alertaEliminar = await this.mensajeAlert.create({
-      header: 'Esta segur@ de eliminar esta tarea',
+      header: 'Esta segur@ de eliminar esta tarea?',
       buttons: [
         {
           text: 'Cancelar',
